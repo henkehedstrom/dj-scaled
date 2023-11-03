@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkk2wy2c3o8qi"]
+
+[ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_8guv1"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Fish" parent="." instance=ExtResource("1_8guv1")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.961098, 0.276208, 0, -0.276208, 0.961098, 0, 1.40857, 4.08699)
