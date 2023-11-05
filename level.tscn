@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkk2wy2c3o8qi"]
+[gd_scene load_steps=4 format=3 uid="uid://dkk2wy2c3o8qi"]
 
 [ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_8guv1"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_5xkw7"]
+[ext_resource type="PackedScene" uid="uid://b0fx7x0rtxq20" path="res://archway.glb" id="3_j4v0s"]
 
 [node name="Level" type="Node3D"]
 
@@ -13,3 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 0.961098, 0.276208, 0, -0.276208, 0.961098, 
 
 [node name="fioshtank" parent="." instance=ExtResource("2_5xkw7")]
 transform = Transform3D(7.32, 0, 0, 0, 7.32, 0, 0, 0, 7.32, 0, 0, 0)
+
+[node name="archway" parent="." instance=ExtResource("3_j4v0s")]
+transform = Transform3D(2.82932, -0.149516, 0, 0.149516, 2.82932, 0, 0, 0, 2.83327, -50.8881, 25.4225, -67.2066)
