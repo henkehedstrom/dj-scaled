@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=5 format=3 uid="uid://b00jxdscyoi17"]
 
 [ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_jg4l2"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
+[ext_resource type="PackedScene" uid="uid://l5c1bb70xa3d" path="res://Scenes/circle_goal.tscn" id="4_iq0nm"]
 [ext_resource type="PackedScene" uid="uid://cloeas1uwl58f" path="res://Scenes/goal.tscn" id="5_4w3am"]
 
 [node name="Level" type="Node3D"]
@@ -27,3 +28,55 @@ goal_text = "3"
 [node name="Goal4" parent="." instance=ExtResource("5_4w3am")]
 transform = Transform3D(-0.938071, 0, 0.346444, 0, 1, 0, -0.346444, 0, -0.938071, -306.174, 17.5524, -270.293)
 goal_text = "4"
+
+[node name="CircleGoal" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(-0.997776, 0, -0.0666571, 0, 1, 0, 0.0666571, 0, -0.997776, -303.894, 87.4862, -61.4423)
+goal_text = "5"
+
+[node name="CircleGoal2" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(-0.997776, 0, -0.0666571, 0, 1, 0, 0.0666571, 0, -0.997776, -303.894, 139.533, 182.542)
+goal_text = "6"
+
+[node name="CircleGoal3" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(-0.287043, 0, -0.957918, 0, 1, 0, 0.957918, 0, -0.287043, 123.035, 75.1574, 356.167)
+goal_text = "7"
+
+[node name="CircleGoal4" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(-0.287043, 0, -0.957918, 0, 1, 0, 0.957918, 0, -0.287043, 159.086, 75.1574, 365.392)
+goal_text = "8"
+
+[node name="CircleGoal5" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.13371, 0, -0.991021, 0, 1, 0, 0.991021, 0, 0.13371, 188.586, 75.1574, 367.3)
+goal_text = "9"
+
+[node name="CircleGoal6" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.686022, 0, -0.727581, 0, 1, 0, 0.727581, 0, 0.686022, 242.521, 75.1574, 344.065)
+goal_text = "10"
+
+[node name="CircleGoal7" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.980502, 0, -0.196511, 0, 1, 0, 0.196511, 0, 0.980502, 255.554, 75.1574, 272.523)
+goal_text = "11"
+
+[node name="CircleGoal8" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.980502, 0, -0.196511, -0.0698978, 0.934602, -0.348759, 0.18366, 0.355694, 0.916379, 255.554, 75.1574, -39.2062)
+goal_text = "12"
+
+[node name="CircleGoal9" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.980502, 0, -0.196511, -0.136113, 0.721277, -0.679141, 0.141739, 0.692647, 0.707213, 255.554, 90.6308, -81.0911)
+goal_text = "13"
+
+[node name="CircleGoal10" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.980502, 0, -0.196511, -0.194499, 0.142733, -0.970463, 0.0280485, 0.989761, 0.13995, 255.554, 133.56, -103.073)
+goal_text = "14"
+
+[node name="CircleGoal11" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.980502, -2.12688e-09, -0.196511, -0.163862, -0.551981, -0.817598, -0.10847, 0.833857, -0.541218, 255.554, 185.114, -78.1437)
+goal_text = "15"
+
+[node name="CircleGoal12" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.980502, -2.12688e-09, -0.196511, 0.00175258, -0.99996, 0.00874466, -0.196503, -0.00891837, -0.980463, 255.554, 185.114, -32.9449)
+goal_text = "16"
+
+[node name="CircleGoal13" parent="." instance=ExtResource("4_iq0nm")]
+transform = Transform3D(0.939238, 0.0644852, -0.337157, 0.21525, -0.875741, 0.43214, -0.267395, -0.478455, -0.836409, 255.554, 154.788, 6.85629)
+goal_text = "17"
