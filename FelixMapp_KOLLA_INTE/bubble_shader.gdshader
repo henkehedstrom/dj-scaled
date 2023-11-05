@@ -18,7 +18,7 @@ void vertex() {
         INV_VIEW_MATRIX[2],
         MODEL_MATRIX[3]
     );
-    MODELVIEW_MATRIX = modified_model_view * scale_matrix;
+    MODELVIEW_MATRIX = modified_model_view * scale_matrix;	
 }
 
 void fragment() {

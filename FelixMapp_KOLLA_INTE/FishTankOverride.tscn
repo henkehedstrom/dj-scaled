@@ -13,11 +13,15 @@ point_count = 4
 [node name="fioshtank" instance=ExtResource("1_o5fft")]
 
 [node name="Glass" parent="." index="0"]
+visible = false
 surface_material_override/0 = ExtResource("2_gd3sh")
 
 [node name="Sand" parent="." index="1"]
 material_override = ExtResource("2_31fof")
 surface_material_override/0 = ExtResource("2_31fof")
+
+[node name="GlassTop" parent="." index="2"]
+visible = false
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." index="3"]
 amount = 20

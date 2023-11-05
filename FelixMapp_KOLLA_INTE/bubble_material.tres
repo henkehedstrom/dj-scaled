@@ -7,5 +7,5 @@
 render_priority = 0
 shader = ExtResource("1_gk0d1")
 shader_parameter/billboard = null
-shader_parameter/tint = Color(0.694118, 0.827451, 1, 1)
+shader_parameter/tint = Color(0.7056, 0.79744, 0.84, 1)
 shader_parameter/albedo = ExtResource("2_ydymo")
