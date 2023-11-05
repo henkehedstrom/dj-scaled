@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://caqry3nbmckft" path="res://FelixMapp_KOLLA_INTE/fioshtank.glb" id="1_o5fft"]
 [ext_resource type="Material" uid="uid://bsumrc1nqh50q" path="res://FelixMapp_KOLLA_INTE/base_shader.tres" id="2_31fof"]
 [ext_resource type="Material" uid="uid://d4fbhmi1ysnxk" path="res://FelixMapp_KOLLA_INTE/glass_material.tres" id="2_gd3sh"]
-[ext_resource type="QuadMesh" uid="uid://c7ldi3dea6u3u" path="res://FelixMapp_KOLLA_INTE/particle_mesh.tres" id="4_352bp"]
+[ext_resource type="QuadMesh" path="res://FelixMapp_KOLLA_INTE/particle_mesh.tres" id="4_352bp"]
 
 [sub_resource type="Curve" id="Curve_sfpup"]
 max_value = 0.7

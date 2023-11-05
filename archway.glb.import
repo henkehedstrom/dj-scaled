@@ -34,6 +34,12 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://archway_material.tres"
 }
+},
+"nodes": {
+"PATH:Cube": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
 }
 }
 gltf/embedded_image_handling=1
