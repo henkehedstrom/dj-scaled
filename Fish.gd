@@ -67,13 +67,9 @@ func apply_rotation(delta: float):
 		clamp(rotation_angle.x, -max_roll_speed, max_roll_speed))
 	
 	rotate(right, local_rotation.x * delta) # Pitch
-<<<<<<< Updated upstream
 	rotate(up, local_rotation.z * delta) # Yaw
 	rotate(forward, local_rotation.y * delta) # Roll
-=======
-	rotate(up, local_rotation.y * delta) # Yaw
-	#rotate(forward, local_rotation.z * delta) # Roll
->>>>>>> Stashed changes
+
 	
 	yaw = 0.0;
 	rotation_angle = Vector2.ZERO
