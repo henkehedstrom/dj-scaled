@@ -11,6 +11,7 @@ size = Vector3(1, 1, 5.38096)
 
 [node name="Fish" type="CharacterBody3D"]
 script = ExtResource("1_y5jyl")
+min_speed = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000483274, 0.144249, -0.186019)
