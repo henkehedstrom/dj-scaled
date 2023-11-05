@@ -3,6 +3,6 @@
 [ext_resource type="Shader" path="res://FelixMapp_KOLLA_INTE/glass_material.gdshader" id="1_p3q4l"]
 
 [resource]
-render_priority = 0
+render_priority = -3
 shader = ExtResource("1_p3q4l")
-shader_parameter/color = Color(0.12549, 0.211765, 0.305882, 0.333333)
+shader_parameter/color = Color(0.12549, 0.211765, 0.305882, 0.631373)
