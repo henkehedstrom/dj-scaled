@@ -1,38 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkk2wy2c3o8qi"]
+[gd_scene load_steps=3 format=3 uid="uid://dkk2wy2c3o8qi"]
 
 [ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_8guv1"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_kmqdb"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_vukxj"]
+[ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_5xkw7"]
 
 [node name="Level" type="Node3D"]
 
 [node name="Fish" parent="." instance=ExtResource("1_8guv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5935, 23.1932)
 
 [node name="Camera3D" type="Camera3D" parent="Fish"]
 transform = Transform3D(1, 0, 0, 0, 0.961098, 0.276208, 0, -0.276208, 0.961098, 0, 1.40857, 7.70137)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.23259, 0, -11.6301)
-mesh = SubResource("BoxMesh_kmqdb")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52137, 0, -19.0674)
-mesh = SubResource("BoxMesh_kmqdb")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62072, 0, -41.3032)
-mesh = SubResource("BoxMesh_kmqdb")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96744, 0, -33.4878)
-mesh = SubResource("BoxMesh_kmqdb")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9173, 0, -11.4848)
-mesh = SubResource("BoxMesh_kmqdb")
-
-[node name="floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(709.219, 0, 0, 0, 709.219, 0, 0, 0, 709.219, 0, -14.3916, 0)
-mesh = SubResource("PlaneMesh_vukxj")
+[node name="fioshtank" parent="." instance=ExtResource("2_5xkw7")]
+transform = Transform3D(7.32, 0, 0, 0, 7.32, 0, 0, 0, 7.32, 0, 0, 0)

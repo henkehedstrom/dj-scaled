@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnr28e1k7dff1"]
+
+[ext_resource type="PackedScene" uid="uid://caqry3nbmckft" path="res://FelixMapp_KOLLA_INTE/fioshtank.glb" id="1_sjpa2"]
+
+[node name="Tank" type="Node3D"]
+
+[node name="fioshtank" parent="." instance=ExtResource("1_sjpa2")]

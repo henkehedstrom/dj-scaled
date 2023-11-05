@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnatb4jcs3ap3"]
+
+[ext_resource type="PackedScene" uid="uid://caqry3nbmckft" path="res://FelixMapp_KOLLA_INTE/fioshtank.glb" id="1_o5fft"]
+[ext_resource type="Material" uid="uid://bsumrc1nqh50q" path="res://FelixMapp_KOLLA_INTE/base_shader.tres" id="2_31fof"]
+[ext_resource type="Material" uid="uid://d4fbhmi1ysnxk" path="res://FelixMapp_KOLLA_INTE/glass_material.tres" id="2_gd3sh"]
+
+[node name="fioshtank" instance=ExtResource("1_o5fft")]
+
+[node name="Glass" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gd3sh")
+
+[node name="Sand" parent="." index="1"]
+material_override = ExtResource("2_31fof")
+surface_material_override/0 = ExtResource("2_31fof")
