@@ -5,4 +5,4 @@
 [resource]
 render_priority = -3
 shader = ExtResource("1_p3q4l")
-shader_parameter/color = Color(0.12549, 0.211765, 0.305882, 0.631373)
+shader_parameter/color = Color(0.415686, 0.54902, 0.866667, 0.498039)
