@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cloeas1uwl58f"]
 
-[ext_resource type="PackedScene" uid="uid://b0fx7x0rtxq20" path="res://archway.glb" id="1_bdlhf"]
+[ext_resource type="PackedScene" uid="uid://b0fx7x0rtxq20" path="res://Models/archway.glb" id="1_bdlhf"]
 [ext_resource type="Script" path="res://Scripts/goal.gd" id="1_fq3f4"]
 [ext_resource type="AudioStream" uid="uid://dwuw7uxubuokt" path="res://SFX/Pling.mp3" id="3_kd3js"]
 

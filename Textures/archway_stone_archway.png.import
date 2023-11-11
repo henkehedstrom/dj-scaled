@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hnyslan5dcro"
-path.s3tc="res://.godot/imported/archway.png-7b92c99ddb91c99f2c0ff3e8a5782a53.s3tc.ctex"
+uid="uid://bk2wjtcputxq0"
+path.s3tc="res://.godot/imported/archway_stone_archway.png-3a39a958ddb3e201c17c25f42ac1fb26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://archway.png"
-dest_files=["res://.godot/imported/archway.png-7b92c99ddb91c99f2c0ff3e8a5782a53.s3tc.ctex"]
+source_file="res://Textures/archway_stone_archway.png"
+dest_files=["res://.godot/imported/archway_stone_archway.png-3a39a958ddb3e201c17c25f42ac1fb26.s3tc.ctex"]
 
 [params]
 

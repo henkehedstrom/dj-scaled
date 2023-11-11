@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b0fx7x0rtxq20"
-path="res://.godot/imported/archway.glb-d62dd43104a366c6815568e7e3c8f234.scn"
+uid="uid://lrvi0rtejd1x"
+path="res://.godot/imported/log.glb-fc839b4b9e35019c3b14766b515651b7.scn"
 
 [deps]
 
-source_file="res://archway.glb"
-dest_files=["res://.godot/imported/archway.glb-d62dd43104a366c6815568e7e3c8f234.scn"]
+source_file="res://Models/log.glb"
+dest_files=["res://.godot/imported/log.glb-fc839b4b9e35019c3b14766b515651b7.scn"]
 
 [params]
 
@@ -30,13 +30,13 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Material.001": {
+"Material.002": {
 "use_external/enabled": true,
-"use_external/path": "res://archway_material.tres"
+"use_external/path": "res://Materials/log_material.tres"
 }
 },
 "nodes": {
-"PATH:Cube": {
+"PATH:Cylinder": {
 "generate/physics": true,
 "physics/shape_type": 2
 }

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cid6u3cmr5qux"]
 
 [ext_resource type="Script" path="res://Fish.gd" id="1_y5jyl"]
-[ext_resource type="PackedScene" uid="uid://5db2ymui2if4" path="res://fish.glb" id="2_jbxnt"]
+[ext_resource type="PackedScene" uid="uid://5db2ymui2if4" path="res://Models/fish.glb" id="2_jbxnt"]
 [ext_resource type="Script" path="res://addons/interpolated_camera_3d/interpolated_camera_3d.gd" id="3_tkw4t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0rue"]

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://beob07k16c872"]
+
+[ext_resource type="Texture2D" uid="uid://dujinpjirqdc2" path="res://Textures/log_bark.png" id="1_17tub"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_17tub")
+texture_filter = 2

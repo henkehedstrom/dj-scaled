@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5db2ymui2if4"
-path="res://.godot/imported/fish.glb-3c31827370506946f2a2fc17ab2304bd.scn"
+uid="uid://b0fx7x0rtxq20"
+path="res://.godot/imported/archway.glb-bd2ad3c3d1d19649e67dd611d095db32.scn"
 
 [deps]
 
-source_file="res://fish.glb"
-dest_files=["res://.godot/imported/fish.glb-3c31827370506946f2a2fc17ab2304bd.scn"]
+source_file="res://Models/archway.glb"
+dest_files=["res://.godot/imported/archway.glb-bd2ad3c3d1d19649e67dd611d095db32.scn"]
 
 [params]
 
@@ -32,7 +32,13 @@ _subresources={
 "materials": {
 "Material.001": {
 "use_external/enabled": true,
-"use_external/path": "res://fish_material.tres"
+"use_external/path": "res://archway_material.tres"
+}
+},
+"nodes": {
+"PATH:Cube": {
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }

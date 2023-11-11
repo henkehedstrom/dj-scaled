@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk2wjtcputxq0"
-path.s3tc="res://.godot/imported/archway_stone_archway.png-96cef995b2b8e2d2c8b62f3380d5c98c.s3tc.ctex"
+uid="uid://de2fl5uumljxi"
+path.s3tc="res://.godot/imported/log_bark.png-cac83607a0444959f0c47ecb4659d44d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://archway_stone_archway.png"
-dest_files=["res://.godot/imported/archway_stone_archway.png-96cef995b2b8e2d2c8b62f3380d5c98c.s3tc.ctex"]
+source_file="res://Models/log_bark.png"
+dest_files=["res://.godot/imported/log_bark.png-cac83607a0444959f0c47ecb4659d44d.s3tc.ctex"]
 
 [params]
 
