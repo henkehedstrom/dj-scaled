@@ -14,7 +14,11 @@ extends CharacterBody3D
 @export var max_yaw_speed: float = 3.14
 @export var max_roll_speed: float = 3.14
 
+@onready var debug_text = $abc123/DebugText3D
+
 var rotation_angle: Vector2 = Vector2.ZERO
+var wiggle: float = 0
+var wiggle_direction: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,7 +53,14 @@ func _process(delta):
 	if Input.is_action_pressed("pitch_down"):
 		rotation_angle.y = -yaw_speed
 	
+	wiggle = wiggle - 3 * delta
+	wiggle = clamp(wiggle, 0, 1)
+	
+	current_speed = current_speed + wiggle * 0.07825
+	current_speed = current_speed - 1.5 * delta
 	current_speed = clamp(current_speed, min_speed, max_speed)
+	
+	debug_text.text = "Wiggle: %f\nSpeed: %f" % [wiggle, current_speed]
 	
 	apply_rotation(delta)
 	
@@ -69,7 +80,6 @@ func apply_rotation(delta: float):
 	rotate(right, local_rotation.x * delta) # Pitch
 	rotate(up, local_rotation.z * delta) # Yaw
 	rotate(forward, local_rotation.y * delta) # Roll
-
 	
 	yaw = 0.0;
 	rotation_angle = Vector2.ZERO
@@ -81,4 +91,14 @@ func _physics_process(_delta):
 	
 func _input(event):
 	if event is InputEventMouseMotion:
-		rotation_angle = event.relative
+		rotation_angle = event.relative * 0.5
+		
+		if event.relative.x != 0:
+			var direction = sign(event.relative.x)
+			
+			if direction > 0 && wiggle_direction <= 0:
+				wiggle = wiggle + event.relative.x * 0.45
+				wiggle_direction = 1
+			if direction < 0 && wiggle_direction >= 0:
+				wiggle = wiggle - event.relative.x * 0.45
+				wiggle_direction = -1
