@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cid6u3cmr5qux"]
 
 [ext_resource type="Script" path="res://Fish.gd" id="1_y5jyl"]
-[ext_resource type="PackedScene" uid="uid://5db2ymui2if4" path="res://Models/fish.glb" id="2_jbxnt"]
+[ext_resource type="PackedScene" uid="uid://curutlqyuqybp" path="res://fish_inherited.tscn" id="3_lkjiq"]
 [ext_resource type="Script" path="res://addons/interpolated_camera_3d/interpolated_camera_3d.gd" id="3_tkw4t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0rue"]
@@ -17,9 +17,6 @@ min_speed = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000483274, 0.144249, -0.186019)
 shape = SubResource("BoxShape3D_n0rue")
 
-[node name="FishModel" parent="." instance=ExtResource("2_jbxnt")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-
 [node name="Camera" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.961098, 0.276208, 0, -0.276208, 0.961098, 0, 8.53796, 18.5594)
 top_level = true
@@ -33,3 +30,6 @@ spring_length = 5.735
 
 [node name="CameraTarget" type="Marker3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00217652, 5.46513)
+
+[node name="FishModel" parent="." instance=ExtResource("3_lkjiq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
