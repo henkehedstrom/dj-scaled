@@ -74,8 +74,13 @@ func _on_join_game_button_pressed():
 	$MultiplayerControl.visible = false
 	$LobbyControl.visible = true
 
-func _on_player_connected(id):
+func _on_player_connected(id : int):
 	_register_player.rpc_id(id, player_info)
+
+@rpc("any_peer", "reliable")
+func _host_announce():
+	$LobbyControl/ConnectedPlayers.add_item("Host")
+	pass
 
 @rpc("any_peer", "reliable")
 func _register_player(new_player_info):
@@ -84,3 +89,6 @@ func _register_player(new_player_info):
 	player_connected.emit(new_player_id, new_player_info)
 	$LobbyControl/ConnectedPlayers.add_item(new_player_info.name + str(new_player_id))
 	print("client connected")
+	
+	if multiplayer.get_unique_id() == 1:
+		_host_announce.rpc_id(new_player_id)
