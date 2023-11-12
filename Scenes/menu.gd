@@ -79,7 +79,9 @@ func _on_player_connected(id : int):
 
 @rpc("any_peer", "reliable")
 func _host_announce():
-	$LobbyControl/ConnectedPlayers.add_item("Host")
+	var item_list = $LobbyControl/ConnectedPlayers
+	var host_index = item_list.add_item("Host")
+	item_list.set_item_custom_fg_color(host_index, Color.GOLD)
 	pass
 
 @rpc("any_peer", "reliable")
