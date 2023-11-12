@@ -27,6 +27,7 @@ func _on_area_3d_body_entered(body):
 			pling.play()
 			print("entered" + self.name)
 			text_object.set_modulate(Color(0,0,1))
+			current_goal = false
 			goal_manager.next()
 		
 
