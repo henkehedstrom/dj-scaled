@@ -9,7 +9,6 @@ size = Vector3(24.406, 33.9659, 1)
 
 [node name="Goal" type="Node3D"]
 script = ExtResource("1_fq3f4")
-goal_text = "Test"
 
 [node name="archway" parent="." instance=ExtResource("1_bdlhf")]
 transform = Transform3D(2.833, 0, 0, 0, 2.833, 0, 0, 0, 2.833, 0, 0, 0)
