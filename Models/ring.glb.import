@@ -31,8 +31,7 @@ import_script/path=""
 _subresources={
 "materials": {
 "@MATERIAL:0": {
-"use_external/enabled": true,
-"use_external/path": "res://Materials/ring_material.tres"
+"use_external/path": "res://Materials/ring_material_red.tres"
 }
 }
 }
