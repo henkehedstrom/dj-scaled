@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cmq2aomk7skuc"]
+
+[ext_resource type="FontFile" uid="uid://bppe7h0hr3x3n" path="res://Fonts/A4SPEED-Bold.ttf" id="1_ltn88"]
+
+[resource]
+default_font = ExtResource("1_ltn88")
+default_font_size = 60
