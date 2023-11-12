@@ -21,7 +21,7 @@ font_size = 1500
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -0.0132815, -0.999912, 0, 0.999912, -0.0132815, 2.38667, 0.00280118, -0.615079)
+transform = Transform3D(1, 0, 0, 0, -0.0132815, -0.999912, 0, 0.999912, -0.0132815, 0.0246258, -1.89742, 0.469764)
 shape = SubResource("CylinderShape3D_vpc1q")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
