@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dueooh33h2buq"]
+[gd_scene load_steps=6 format=3 uid="uid://dueooh33h2buq"]
 
 [ext_resource type="PackedScene" uid="uid://dkk2wy2c3o8qi" path="res://level.tscn" id="1_cat8j"]
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_wkpqa"]
 [ext_resource type="Texture2D" uid="uid://crcm7bs0qyiyt" path="res://Textures/splash_title.png" id="3_3jtjk"]
 [ext_resource type="Theme" path="res://ui_theme.tres" id="4_c10h6"]
+[ext_resource type="Script" path="res://Scripts/UIMenu.gd" id="4_vjooh"]
 
 [node name="menu" type="Node3D"]
 script = ExtResource("1_wkpqa")
@@ -27,6 +28,7 @@ offset_left = 24.0
 offset_top = 318.0
 offset_right = 24.0
 offset_bottom = 318.0
+script = ExtResource("4_vjooh")
 
 [node name="SoloPlayButton" type="Button" parent="MainMenuControl"]
 layout_mode = 0
@@ -57,7 +59,7 @@ text = "OPTIONS"
 flat = true
 alignment = 0
 
-[node name="MultiplayerControl" type="Control" parent="."]
+[node name="LobbyControl" type="Control" parent="." node_paths=PackedStringArray("back_menu")]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -65,6 +67,37 @@ offset_left = 24.0
 offset_top = 318.0
 offset_right = 24.0
 offset_bottom = 318.0
+script = ExtResource("4_vjooh")
+back_menu = NodePath("../MultiplayerControl")
+
+[node name="StartGameButton" type="Button" parent="LobbyControl"]
+layout_mode = 0
+offset_top = 326.0
+offset_right = 405.0
+offset_bottom = 394.0
+theme = ExtResource("4_c10h6")
+text = "START"
+flat = true
+alignment = 0
+
+[node name="ConnectedPlayers" type="ItemList" parent="LobbyControl"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -16.0
+offset_right = 695.0
+offset_bottom = 321.0
+theme = ExtResource("4_c10h6")
+
+[node name="MultiplayerControl" type="Control" parent="." node_paths=PackedStringArray("back_menu")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 318.0
+offset_right = 24.0
+offset_bottom = 318.0
+script = ExtResource("4_vjooh")
+back_menu = NodePath("../MainMenuControl")
 
 [node name="HostGameButton" type="Button" parent="MultiplayerControl"]
 layout_mode = 0
@@ -95,7 +128,7 @@ offset_bottom = 193.0
 theme = ExtResource("4_c10h6")
 placeholder_text = "HOST IP"
 
-[node name="OptionsControl" type="Control" parent="."]
+[node name="OptionsControl" type="Control" parent="." node_paths=PackedStringArray("back_menu")]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -103,6 +136,8 @@ offset_left = 24.0
 offset_top = 318.0
 offset_right = 24.0
 offset_bottom = 318.0
+script = ExtResource("4_vjooh")
+back_menu = NodePath("../MainMenuControl")
 
 [node name="InvertXAxisCheckbox" type="CheckBox" parent="OptionsControl"]
 layout_mode = 0
@@ -137,33 +172,6 @@ offset_right = 495.0
 offset_bottom = 137.0
 theme = ExtResource("4_c10h6")
 text = "Invert Y-axis"
-
-[node name="LobbyControl" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 24.0
-offset_top = 318.0
-offset_right = 24.0
-offset_bottom = 318.0
-
-[node name="StartGameButton" type="Button" parent="LobbyControl"]
-layout_mode = 0
-offset_top = 326.0
-offset_right = 405.0
-offset_bottom = 394.0
-theme = ExtResource("4_c10h6")
-text = "START"
-flat = true
-alignment = 0
-
-[node name="ConnectedPlayers" type="ItemList" parent="LobbyControl"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -16.0
-offset_right = 695.0
-offset_bottom = 321.0
-theme = ExtResource("4_c10h6")
 
 [node name="QuitOrBackGameButton" type="Button" parent="."]
 anchors_preset = 3

@@ -28,9 +28,11 @@ func _on_solo_play_button_pressed():
 
 
 func _on_quit_game_button_pressed():
-	_show_menu(back)
 	if back == null:	
 		_quit_game()
+	else:
+		_show_menu(back)
+	
 
 
 func _change_scene(change_to_scene : PackedScene):
@@ -45,6 +47,7 @@ func _change_scene(change_to_scene : PackedScene):
 
 func _quit_game():
 	get_tree().quit()
+	pass
 
 
 func _on_multiplayer_button_pressed():
@@ -108,8 +111,7 @@ func _on_options_button_pressed():
 
 	
 func _show_menu(menu:Control):
-	back = current_menu #TODO: This does not always work, you can get stuck in a loop :)
-	current_menu = menu
+	back = menu.back_menu
 	_make_all_menus_invisible()
 	if menu == main_menu:
 		quit_or_back_button.text = "Quit"
