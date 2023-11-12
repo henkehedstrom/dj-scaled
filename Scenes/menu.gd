@@ -73,6 +73,7 @@ func _on_join_game_button_pressed():
 	
 	$MultiplayerControl.visible = false
 	$LobbyControl.visible = true
+	$LobbyControl/StartGameButton.visible = false
 
 func _on_player_connected(id : int):
 	_register_player.rpc_id(id, player_info)
