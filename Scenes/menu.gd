@@ -12,6 +12,9 @@ func _on_solo_play_button_pressed():
 	_change_scene(solo_play_scene)
 
 
+func _on_quit_game_button_pressed():
+	_quit_game()
+
 func _change_scene(change_to_scene : PackedScene):
 	var root = get_tree().root
 	var level = root.get_children()[0]
@@ -23,3 +26,5 @@ func _change_scene(change_to_scene : PackedScene):
 
 func _quit_game():
 	get_tree().quit()
+
+

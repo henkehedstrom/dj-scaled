@@ -20,18 +20,30 @@ offset_right = 694.0
 offset_bottom = 293.0
 texture = ExtResource("3_3jtjk")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 23.0
-offset_top = 332.0
-offset_right = 428.0
-offset_bottom = 400.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 318.0
+offset_right = 24.0
+offset_bottom = 318.0
+
+[node name="SoloPlayButton" type="Button" parent="Control"]
+offset_right = 405.0
+offset_bottom = 68.0
 theme = ExtResource("4_c10h6")
 text = "SOLO PLAY"
 flat = true
 alignment = 0
 
-[node name="ItemList" type="ItemList" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="QuitGameButton" type="Button" parent="Control"]
+offset_top = 67.0
+offset_right = 405.0
+offset_bottom = 135.0
+theme = ExtResource("4_c10h6")
+text = "QUIT"
+flat = true
+alignment = 0
 
-[connection signal="pressed" from="Button" to="." method="_on_solo_play_button_pressed"]
+[connection signal="pressed" from="Control/SoloPlayButton" to="." method="_on_solo_play_button_pressed"]
+[connection signal="pressed" from="Control/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
