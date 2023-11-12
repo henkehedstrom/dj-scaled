@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkk2wy2c3o8qi"]
+[gd_scene load_steps=8 format=3 uid="uid://dkk2wy2c3o8qi"]
 
 [ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_8guv1"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_5xkw7"]
 [ext_resource type="PackedScene" uid="uid://b0fx7x0rtxq20" path="res://Models/archway.glb" id="3_j4v0s"]
 [ext_resource type="PackedScene" uid="uid://d3xkytfl7anrt" path="res://FelixMapp_KOLLA_INTE/Helper/DebugText3D.tscn" id="4_ahg30"]
 [ext_resource type="PackedScene" uid="uid://lrvi0rtejd1x" path="res://Models/log.glb" id="5_esn3x"]
+[ext_resource type="PackedScene" uid="uid://b5xxl1ntiwr5v" path="res://Scenes/ring.tscn" id="6_gx6fg"]
 
 [sub_resource type="Environment" id="Environment_gtjgw"]
 fog_enabled = true
@@ -33,3 +34,6 @@ environment = SubResource("Environment_gtjgw")
 
 [node name="log" parent="." instance=ExtResource("5_esn3x")]
 transform = Transform3D(0.737702, 0.162275, 0.655334, -0.214838, 0.97665, 0, -0.640032, -0.14079, 0.755339, -63.2092, 7.11778, 85.6915)
+
+[node name="ring" parent="." instance=ExtResource("6_gx6fg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -58.4583, 23.9648, 0)

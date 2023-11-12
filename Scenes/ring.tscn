@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xxl1ntiwr5v"]
+
+[ext_resource type="PackedScene" uid="uid://dsnth4q6f8xfb" path="res://Models/ring.glb" id="1_6dc6f"]
+[ext_resource type="Material" uid="uid://btv4d3t8xi8cy" path="res://Materials/ring_material.tres" id="2_lqwu2"]
+
+[node name="ring" instance=ExtResource("1_6dc6f")]
+
+[node name="Cylinder" parent="." index="0"]
+material_override = ExtResource("2_lqwu2")
