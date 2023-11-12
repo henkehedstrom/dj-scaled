@@ -16,7 +16,6 @@ fog_density = 0.009
 
 [node name="Fish" parent="." instance=ExtResource("1_8guv1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5935, 23.1932)
-max_speed = 2.0
 
 [node name="fioshtank" parent="." instance=ExtResource("2_5xkw7")]
 transform = Transform3D(7.32, 0, 0, 0, 7.32, 0, 0, 0, 7.32, 0, 0, 0)
