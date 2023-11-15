@@ -35,17 +35,9 @@ func _on_quit_game_button_pressed():
 	else:
 		_show_menu(back)
 	
-
-
 func _change_scene(change_to_scene : PackedScene):
-	var root = get_tree().root
-	var level = root.get_children()[0]
-	root.remove_child(level)
-	
-	var new_scene = change_to_scene.instantiate()
-	root.add_child(new_scene)
+	get_tree().change_scene_to_packed(change_to_scene)
 	pass
-
 
 func _quit_game():
 	get_tree().quit()
