@@ -1,6 +1,8 @@
 extends Node3D
 
 var solo_play_scene : PackedScene = preload("res://level.tscn")
+var multiplayer_scene : PackedScene = preload("res://level.tscn") #TODO change when multiplayer has its own scene :)
+
 var player_info = {"name": "Name", "id": -1}
 
 signal player_connected(peer_id, player_info)
@@ -125,3 +127,14 @@ func _make_all_menus_invisible():
 	options_menu.visible = false
 	lobby_menu.visible = false
 	
+
+
+func _on_start_game_button_pressed():
+	#TODO: add check that at least one player should have joined?
+	#TODO: ready system? all players have to be ready before starting?
+	_start_multiplayer_game.rpc()
+	pass # Replace with function body.
+
+@rpc("any_peer","call_local")
+func _start_multiplayer_game():
+	_change_scene(multiplayer_scene)

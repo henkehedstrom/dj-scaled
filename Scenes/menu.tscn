@@ -191,6 +191,7 @@ alignment = 0
 [connection signal="pressed" from="MainMenuControl/SoloPlayButton" to="." method="_on_solo_play_button_pressed"]
 [connection signal="pressed" from="MainMenuControl/MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="pressed" from="MainMenuControl/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="LobbyControl/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MultiplayerControl/HostGameButton" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="MultiplayerControl/JoinGameButton" to="." method="_on_join_game_button_pressed"]
 [connection signal="pressed" from="QuitOrBackGameButton" to="." method="_on_quit_game_button_pressed"]
