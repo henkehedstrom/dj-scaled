@@ -8,6 +8,8 @@ func _ready():
 	for i in GameManager.Players:
 		var currentPlayer = player.instantiate()
 		currentPlayer.name = str(GameManager.Players[i].id)
+		if currentPlayer.name == str(multiplayer.get_unique_id()):
+			currentPlayer.get_child(1).current = true
 		add_child(currentPlayer)
 		for spawn in get_tree().get_nodes_in_group("PlayerSpawnPoint"):
 			if spawn.name == str(index):

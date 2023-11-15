@@ -48,6 +48,10 @@ func _process(delta):
 
 	if Input.is_action_pressed("pitch_down"):
 		rotation_angle.y = -yaw_speed
+		
+		
+	if Input.is_action_pressed("mouse_capture"):
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
 	
 	current_speed = clamp(current_speed, min_speed, max_speed)
 	
