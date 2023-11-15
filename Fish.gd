@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var normal_speed = 0.5
+@export var normal_speed = 0
 @export var current_speed: float = 0.0
 @export var max_speed: float = 4.0
 @export var min_speed: float = 0.0
@@ -77,7 +77,7 @@ func apply_rotation(delta: float):
 func _physics_process(_delta):
 	var aim = get_global_transform().basis
 	var forward = -aim.z
-	move_and_collide(forward * current_speed)
+	#move_and_collide(forward * current_speed)
 	
 func _input(event):
 	if event is InputEventMouseMotion:

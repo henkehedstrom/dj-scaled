@@ -1,7 +1,7 @@
 extends Node3D
 
 var solo_play_scene : PackedScene = preload("res://level.tscn")
-var multiplayer_scene : PackedScene = preload("res://level.tscn") #TODO change when multiplayer has its own scene :)
+var multiplayer_scene : PackedScene = preload("res://Scenes/Levels/multiplayer_scene.tscn") #TODO change when multiplayer has its own scene :)
 
 var player_info = {"name": "Name", "id": -1}
 
@@ -16,18 +16,30 @@ var back = null
 var current_menu = main_menu
 @onready var quit_or_back_button = $QuitOrBackGameButton
 
+var i_am_host :bool = false
 
 
 func _ready():
 	$Camera3D.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_show_menu(main_menu)
+	multiplayer.connected_to_server.connect(connected_to_server)
+	multiplayer.connection_failed.connect(connection_failed)
+	multiplayer.peer_connected.connect(_on_player_connected)
 	pass
 
 
 func _on_solo_play_button_pressed():
 	_change_scene(solo_play_scene)
 
+
+func connected_to_server():
+	print("Connected to Server!" + "I am host: " + str(i_am_host))
+	_add_to_players.rpc_id(1,"client", multiplayer.get_unique_id())
+	
+
+func connection_failed():
+	print("Couldn't connect!")
 
 func _on_quit_game_button_pressed():
 	if back == null:	
@@ -55,7 +67,8 @@ func _on_host_game_button_pressed():
 		pass
 	
 	multiplayer.multiplayer_peer = peer
-	print("started server")
+	i_am_host = true
+	print("started server" + "I am host: " + str(i_am_host))
 	_show_menu(lobby_menu)
 
 
@@ -73,8 +86,8 @@ func _on_join_game_button_pressed():
 		return
 	
 	multiplayer.multiplayer_peer = peer
-	print("started client")
-	multiplayer.peer_connected.connect(_on_player_connected)
+	print("started client" + "I am host: " + str(i_am_host))
+
 	
 	_show_menu(lobby_menu)
 
@@ -86,7 +99,6 @@ func _host_announce():
 	var item_list = $LobbyControl/ConnectedPlayers
 	var host_index = item_list.add_item("Host")
 	item_list.set_item_custom_fg_color(host_index, Color.GOLD)
-	pass
 
 @rpc("any_peer", "reliable")
 func _register_player(new_player_info):
@@ -94,15 +106,28 @@ func _register_player(new_player_info):
 	new_player_info.id = new_player_id
 	player_connected.emit(new_player_id, new_player_info)
 	$LobbyControl/ConnectedPlayers.add_item(new_player_info.name + str(new_player_id))
-	print("client connected")
+	print("client connected" + " I am host: " + str(i_am_host))
+	_add_to_players.rpc(new_player_info.name,new_player_id)
 	
 	if multiplayer.get_unique_id() == 1:
 		_host_announce.rpc_id(new_player_id)
-
+			
 
 func _on_options_button_pressed():
 	_show_menu(options_menu)
 
+@rpc("any_peer")
+func _add_to_players(name,id):
+	print("attempting adding player with name: " + name + "and id" + str(id) + "I am host: " + str(i_am_host))
+	if !GameManager.Players.has(id):
+		print("adding player with name: " + name + "and id" + str(id) + "I am host: " + str(i_am_host))
+		GameManager.Players[id]={
+			"name": name,
+			 "id": id}
+	
+	if multiplayer.is_server():
+		for i in GameManager.Players:
+			_add_to_players.rpc(GameManager.Players[i].name,i)
 	
 func _show_menu(menu:Control):
 	back = menu.back_menu
