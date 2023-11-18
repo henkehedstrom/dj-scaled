@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var normal_speed = 0
+@export var normal_speed = 0.1
 @export var current_speed: float = 0.0
 @export var max_speed: float = 4.0
 @export var min_speed: float = 0.0
@@ -25,6 +25,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
+		return
+	
 	if Input.is_action_pressed("forward"):
 		current_speed += acceleration * delta
 		
@@ -79,10 +82,14 @@ func apply_rotation(delta: float):
 	rotation_angle = Vector2.ZERO
 	
 func _physics_process(_delta):
+	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
+		return
 	var aim = get_global_transform().basis
 	var forward = -aim.z
-	#move_and_collide(forward * current_speed)
+	move_and_collide(forward * current_speed)
 	
 func _input(event):
+	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
+		return
 	if event is InputEventMouseMotion:
 		rotation_angle = event.relative
