@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dkk2wy2c3o8qi" path="res://level.tscn" id="1_cat8j"]
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_wkpqa"]
 [ext_resource type="Texture2D" uid="uid://crcm7bs0qyiyt" path="res://Textures/splash_title.png" id="3_3jtjk"]
-[ext_resource type="Theme" path="res://ui_theme.tres" id="4_c10h6"]
+[ext_resource type="Theme" uid="uid://cmq2aomk7skuc" path="res://ui_theme.tres" id="4_c10h6"]
 [ext_resource type="Script" path="res://Scripts/UIMenu.gd" id="4_vjooh"]
 
 [node name="menu" type="Node3D"]

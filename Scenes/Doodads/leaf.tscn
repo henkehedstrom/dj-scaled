@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ifs4favttfl"]
+
+[ext_resource type="Material" uid="uid://84xhvwcjaomq" path="res://Materials/water_plant_material.tres" id="1_g3nfk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_13wvf"]
+
+[node name="Leaf" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.30208, -0.00323672, -0.180241, 0.00421489, 0.999956, 0.000322878, 0.00758944, -2.93129e-05, 30.9229, 0, 0, -31.0959)
+material_override = ExtResource("1_g3nfk")
+mesh = SubResource("PlaneMesh_13wvf")
