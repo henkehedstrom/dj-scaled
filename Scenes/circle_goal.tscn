@@ -17,6 +17,7 @@ transform = Transform3D(2.833, 0, 0, 0, 2.833, 0, 0, 0, 2.833, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.745722, 0, 1.56383)
 visibility_range_end_margin = 330.99
 no_depth_test = true
+render_priority = 1
 text = "Placeholder"
 font_size = 2000
 

@@ -17,9 +17,13 @@ var input_manager = preload("res://Scripts/input_manager.tscn")
 @export var max_roll_speed: float = 3.14
 
 var rotation_angle: Vector2 = Vector2.ZERO
+var goal_manager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	if goal_manager:
+		goal_manager.win.connect(on_win)
 
 	if !GameManager.is_multiplayer:
 		var input = input_manager.instantiate()
@@ -32,6 +36,18 @@ func _ready():
 	pass # Replace with function body.
 
 
+func on_win(id:int):
+	print("The fish that won has id " + str(id) + " you are " + str(multiplayer.get_unique_id()))
+	on_win_internal.rpc(id)
+	print("You won!")
+
+@rpc("any_peer", "call_local")
+func on_win_internal(id:int):
+	if str(id) == name:
+		get_parent().remove_child(self)
+		print("destroyed fish")
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	current_speed = clamp(current_speed, min_speed, max_speed)
@@ -39,6 +55,9 @@ func _process(delta):
 	apply_rotation(delta)
 	
 	pass
+	
+	
+
 	
 func apply_rotation(delta: float):
 	var aim = get_global_transform().basis

@@ -4,6 +4,7 @@ extends Node
 var player = preload("res://fish.tscn")
 var input_manager = preload("res://Scripts/input_manager.tscn")
 @export var spawn_position:Node
+@export var goal_manager:Node
 
 
 
@@ -23,6 +24,7 @@ func _ready():
 			var input = input_manager.instantiate()
 			add_child(input)
 			input.fish = currentPlayer
+			currentPlayer.goal_manager = goal_manager
 		add_child(currentPlayer)
 		
 		for spawn in spawn_positions:

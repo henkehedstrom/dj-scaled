@@ -15,6 +15,7 @@ script = ExtResource("1_hwd8w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.49373, 0.327024, 1.56383)
 visibility_range_end_margin = 330.99
 no_depth_test = true
+render_priority = 1
 text = "Placeholder"
 font_size = 1500
 

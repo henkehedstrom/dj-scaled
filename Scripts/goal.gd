@@ -26,7 +26,7 @@ func set_current():
 	_set_color(Color(0,1,0), green_material)
 	
 func _on_area_3d_body_entered(body):
-	if body is CharacterBody3D: #TODO better check for player?
+	if body is CharacterBody3D && (!GameManager.is_multiplayer || body.name == str(multiplayer.get_unique_id())): #TODO better check for player?
 		if current_goal:
 			pling.play()
 			print("entered" + self.name)
