@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://84xhvwcjaomq" path="res://Materials/water_plant_material.tres" id="1_g3nfk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_13wvf"]
+subdivide_depth = 6
 
 [node name="Leaf" type="Node3D"]
 
