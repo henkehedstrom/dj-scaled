@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var normal_speed = 0.1
+@export var normal_speed = 0.5
 @export var current_speed: float = 0.0
 @export var max_speed: float = 4.0
 @export var min_speed: float = 0.0
@@ -18,6 +18,7 @@ var rotation_angle: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_speed = normal_speed
 	pass # Replace with function body.

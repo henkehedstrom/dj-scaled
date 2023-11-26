@@ -1,7 +1,7 @@
 extends Node3D
 
 var solo_play_scene : PackedScene = preload("res://level.tscn")
-var multiplayer_scene : PackedScene = preload("res://Scenes/Levels/multiplayer_scene.tscn") #TODO change when multiplayer has its own scene :)
+var multiplayer_scene : PackedScene = preload("res://Scenes/Levels/multiplayer_scene.tscn") 
 
 var player_info = {"name": "Name", "id": -1}
 
@@ -70,6 +70,7 @@ func _on_host_game_button_pressed():
 	i_am_host = true
 	print("started server" + "I am host: " + str(i_am_host))
 	_show_menu(lobby_menu)
+	add_self()
 
 
 func _on_join_game_button_pressed():
@@ -88,30 +89,26 @@ func _on_join_game_button_pressed():
 	multiplayer.multiplayer_peer = peer
 	print("started client" + "I am host: " + str(i_am_host))
 
-	
+	add_self()
 	_show_menu(lobby_menu)
 
 func _on_player_connected(id : int):
-	_register_player.rpc_id(id, player_info)
+	print("Player connected " + str(id))
+	_register_player.rpc_id(id)
+
 
 @rpc("any_peer", "reliable")
-func _host_announce():
-	var item_list = $LobbyControl/ConnectedPlayers
-	var host_index = item_list.add_item("Host")
-	item_list.set_item_custom_fg_color(host_index, Color.GOLD)
-
-@rpc("any_peer", "reliable")
-func _register_player(new_player_info):
+func _register_player():
 	var new_player_id = multiplayer.get_remote_sender_id()
-	new_player_info.id = new_player_id
-	player_connected.emit(new_player_id, new_player_info)
-	$LobbyControl/ConnectedPlayers.add_item(new_player_info.name + str(new_player_id))
-	print("client connected" + " I am host: " + str(i_am_host))
-	_add_to_players.rpc(new_player_info.name,new_player_id)
+	var name = "Client"
+	if(new_player_id == 1):
+		name = "Host"
 	
-	if multiplayer.get_unique_id() == 1:
-		_host_announce.rpc_id(new_player_id)
-			
+	
+	$LobbyControl/ConnectedPlayers.add_item(name + str(new_player_id))
+	print("client connected" + " I am host: " + str(i_am_host))
+	
+	_add_to_players.rpc(name,new_player_id)
 
 func _on_options_button_pressed():
 	_show_menu(options_menu)
@@ -155,3 +152,11 @@ func _on_start_game_button_pressed():
 @rpc("any_peer","call_local")
 func _start_multiplayer_game():
 	_change_scene(multiplayer_scene)
+	
+
+func add_self():
+	var item_list = $LobbyControl/ConnectedPlayers
+	var host_index = item_list.add_item("Self" + str(multiplayer.get_unique_id()))
+	item_list.set_item_custom_fg_color(host_index, Color.GOLD)
+
+
