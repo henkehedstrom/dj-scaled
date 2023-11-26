@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxby10rew758j"]
+
+[ext_resource type="PackedScene" uid="uid://bfr70gx3c1msy" path="res://Models/chest.glb" id="1_7leqm"]
+[ext_resource type="Shader" path="res://FelixMapp_KOLLA_INTE/base_shader.gdshader" id="2_xhcn1"]
+[ext_resource type="Texture2D" uid="uid://de2fl5uumljxi" path="res://Models/log_bark.png" id="3_0kth2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dyv0g"]
+render_priority = 0
+shader = ExtResource("2_xhcn1")
+shader_parameter/albedo = ExtResource("3_0kth2")
+
+[node name="chest" instance=ExtResource("1_7leqm")]
+transform = Transform3D(2.91, 0, 0, 0, 2.91, 0, 0, 0, 2.91, 0, 0, 0)
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_dyv0g")
