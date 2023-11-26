@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3hr0br00ydvp"]
 
+[ext_resource type="Script" path="res://Scripts/multiplayer_scene.gd" id="1_apn0i"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_uuqeo"]
 [ext_resource type="PackedScene" uid="uid://b0fx7x0rtxq20" path="res://Models/archway.glb" id="3_t8cf8"]
-[ext_resource type="PackedScene" uid="uid://d3xkytfl7anrt" path="res://FelixMapp_KOLLA_INTE/Helper/DebugText3D.tscn" id="4_wsuyy"]
 [ext_resource type="PackedScene" uid="uid://lrvi0rtejd1x" path="res://Models/log.glb" id="5_owdbc"]
 [ext_resource type="PackedScene" uid="uid://b5xxl1ntiwr5v" path="res://Scenes/ring.tscn" id="6_1aqop"]
 
@@ -11,19 +11,14 @@ fog_enabled = true
 fog_light_color = Color(0, 0.223529, 0.670588, 1)
 fog_density = 0.009
 
-[node name="Level" type="Node3D"]
+[node name="multiplayer" type="Node3D"]
+script = ExtResource("1_apn0i")
 
 [node name="fioshtank" parent="." instance=ExtResource("2_uuqeo")]
 transform = Transform3D(7.32, 0, 0, 0, 7.32, 0, 0, 0, 7.32, 0, 0, 0)
 
 [node name="archway" parent="." instance=ExtResource("3_t8cf8")]
 transform = Transform3D(2.82932, -0.149516, 0, 0.149516, 2.82932, 0, 0, 0, 2.83327, -50.8881, 25.4225, -67.2066)
-
-[node name="abc123" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.9093, 17.7818, -70.4464)
-
-[node name="DebugText3D" parent="abc123" instance=ExtResource("4_wsuyy")]
-text = "mål här"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gtjgw")
@@ -36,8 +31,26 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -58.45
 
 [node name="SpawnPositions" type="Node" parent="."]
 
-[node name="SpawnPoint1" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.6238, 23.885, 16.5326)
+[node name="0" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9033, 24.0962, 10.2592)
 
-[node name="SpawnPoint2" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9751, 24.0962, -75.6392)
+[node name="Marker3D" type="Marker3D" parent="SpawnPositions/0"]
+gizmo_extents = 1.66
+
+[node name="1" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.2745, 24.0962, 10.2592)
+
+[node name="Marker3D" type="Marker3D" parent="SpawnPositions/1"]
+gizmo_extents = 1.66
+
+[node name="2" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5976, 24.0962, 10.2592)
+
+[node name="Marker3D" type="Marker3D" parent="SpawnPositions/2"]
+gizmo_extents = 1.66
+
+[node name="3" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.6491, 24.0962, 10.2592)
+
+[node name="Marker3D" type="Marker3D" parent="SpawnPositions/3"]
+gizmo_extents = 1.66
