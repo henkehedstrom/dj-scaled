@@ -151,6 +151,7 @@ func _on_start_game_button_pressed():
 
 @rpc("any_peer","call_local")
 func _start_multiplayer_game():
+	GameManager.is_multiplayer = true
 	_change_scene(multiplayer_scene)
 	
 

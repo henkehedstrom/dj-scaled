@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+var input_manager = preload("res://Scripts/input_manager.tscn")
+
 @export var normal_speed = 0.5
 @export var current_speed: float = 0.0
 @export var max_speed: float = 4.0
@@ -18,7 +20,14 @@ var rotation_angle: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
+
+	if !GameManager.is_multiplayer:
+		var input = input_manager.instantiate()
+		add_child(input)
+		input.fish = self
+	else:
+		$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
+		
 	current_speed = normal_speed
 	pass # Replace with function body.
 
@@ -51,7 +60,7 @@ func apply_rotation(delta: float):
 	rotation_angle = Vector2.ZERO
 	
 func _physics_process(_delta):
-	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
+	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id() && GameManager.is_multiplayer:
 		return
 	var aim = get_global_transform().basis
 	var forward = -aim.z
