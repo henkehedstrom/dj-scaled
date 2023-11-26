@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=14 format=3 uid="uid://b00jxdscyoi17"]
 
 [ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_jg4l2"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
 [ext_resource type="PackedScene" uid="uid://l5c1bb70xa3d" path="res://Scenes/circle_goal.tscn" id="4_iq0nm"]
 [ext_resource type="PackedScene" uid="uid://cloeas1uwl58f" path="res://Scenes/goal.tscn" id="5_4w3am"]
-[ext_resource type="PackedScene" uid="uid://dqug5t7l2hkkc" path="res://Scenes/goal_manager.tscn" id="5_dmtqs"]
+[ext_resource type="PackedScene" path="res://Scenes/goal_manager.tscn" id="5_dmtqs"]
 [ext_resource type="PackedScene" uid="uid://cphyf0ajdc0xd" path="res://ring_goal.tscn" id="6_ymofm"]
 [ext_resource type="PackedScene" uid="uid://bdhs2mrrbj5nh" path="res://Models/castle_REAL.tscn" id="7_yb2j5"]
 [ext_resource type="PackedScene" uid="uid://dxby10rew758j" path="res://Models/chest_REAL.tscn" id="8_frfar"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dxb08fldpmtet" path="res://FelixMapp_KOLLA_INTE/BubbleEmitter.tscn" id="10_3y3se"]
 [ext_resource type="PackedScene" uid="uid://b5hm5ipyuhpva" path="res://Models/rocktower_REAL.tscn" id="11_niev3"]
 [ext_resource type="PackedScene" uid="uid://bx3u5nno171w1" path="res://Scenes/multiplayer_template.tscn" id="12_6fobl"]
+[ext_resource type="PackedScene" uid="uid://cq7ygeb6mjrok" path="res://Models/ship_REAL.tscn" id="13_day6h"]
 
 [node name="Level" type="Node3D"]
 
@@ -141,3 +142,6 @@ gizmo_extents = 1.66
 
 [node name="MultiplayerTemplate" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("12_6fobl")]
 spawn_position = NodePath("../SpawnPositions")
+
+[node name="ship" parent="." instance=ExtResource("13_day6h")]
+transform = Transform3D(3.18306, 3.25306, -5.19276, 2.01213, 4.9722, 4.34828, 5.78779, -3.51765, 1.34413, 90.0079, -62.9596, -87.9149)

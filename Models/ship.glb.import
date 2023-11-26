@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qada62wp0lvx"
-path="res://.godot/imported/rocktower.glb-af5cb0e63a85f1990861df48a34c7fa7.scn"
+uid="uid://c23ex45qy2fxe"
+path="res://.godot/imported/ship.glb-878e4d54ccbd88e1b376e772f031e179.scn"
 
 [deps]
 
-source_file="res://Models/rocktower.glb"
-dest_files=["res://.godot/imported/rocktower.glb-af5cb0e63a85f1990861df48a34c7fa7.scn"]
+source_file="res://Models/ship.glb"
+dest_files=["res://.godot/imported/ship.glb-878e4d54ccbd88e1b376e772f031e179.scn"]
 
 [params]
 
@@ -20,7 +20,7 @@ nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=2
+meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 skins/use_named_skins=true
 animation/import=true
@@ -30,9 +30,10 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Cube": {
-"decomposition/precision": 1,
-"generate/physics": true
+"PATH:Circle": {
+"decomposition/precision": 10,
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }
