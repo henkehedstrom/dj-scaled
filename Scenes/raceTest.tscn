@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=12 format=3 uid="uid://b00jxdscyoi17"]
 
 [ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_jg4l2"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxby10rew758j" path="res://Models/chest_REAL.tscn" id="8_frfar"]
 [ext_resource type="PackedScene" uid="uid://cu6n7q2mcga41" path="res://Scenes/Doodads/plant.tscn" id="9_sgmh7"]
 [ext_resource type="PackedScene" uid="uid://dxb08fldpmtet" path="res://FelixMapp_KOLLA_INTE/BubbleEmitter.tscn" id="10_3y3se"]
+[ext_resource type="PackedScene" uid="uid://b5hm5ipyuhpva" path="res://Models/rocktower_REAL.tscn" id="11_niev3"]
 
 [node name="Level" type="Node3D"]
 
@@ -107,3 +108,6 @@ transform = Transform3D(1.2271, 0.263178, 0, -0.263178, 1.2271, 0, 0, 0, 1.255, 
 
 [node name="BubbleEmitter" parent="." instance=ExtResource("10_3y3se")]
 transform = Transform3D(6.37, 0, 0, 0, 6.37, 0, 0, 0, 6.37, 188.126, 36.6059, 41.1115)
+
+[node name="rocktower" parent="." instance=ExtResource("11_niev3")]
+transform = Transform3D(2.48728, 0, -10.2938, 0, 10.59, 0, 10.2938, 0, 2.48728, 248.457, 20.3259, 78.6126)
