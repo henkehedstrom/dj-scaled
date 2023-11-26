@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx3u5nno171w1"]
+
+[ext_resource type="Script" path="res://MultiplayerTemplate.gd" id="1_kukof"]
+
+[node name="MultiplayerTemplate" type="Node"]
+script = ExtResource("1_kukof")

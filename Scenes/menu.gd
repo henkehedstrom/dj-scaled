@@ -1,7 +1,7 @@
 extends Node3D
 
 var solo_play_scene : PackedScene = preload("res://level.tscn")
-var multiplayer_scene : PackedScene = preload("res://Scenes/Levels/multiplayer_scene.tscn") 
+var multiplayer_scene : PackedScene = preload("res://Scenes/raceTest.tscn") 
 
 var player_info = {"name": "Name", "id": -1}
 

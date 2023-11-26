@@ -1,22 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=11 format=3 uid="uid://b00jxdscyoi17"]
 
-[ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="1_jg4l2"]
+[ext_resource type="Script" path="res://Scenes/raceTest.gd" id="1_f5l2o"]
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
 [ext_resource type="PackedScene" uid="uid://l5c1bb70xa3d" path="res://Scenes/circle_goal.tscn" id="4_iq0nm"]
 [ext_resource type="PackedScene" uid="uid://cloeas1uwl58f" path="res://Scenes/goal.tscn" id="5_4w3am"]
 [ext_resource type="PackedScene" uid="uid://dqug5t7l2hkkc" path="res://Scenes/goal_manager.tscn" id="5_dmtqs"]
 [ext_resource type="PackedScene" uid="uid://cphyf0ajdc0xd" path="res://ring_goal.tscn" id="6_ymofm"]
-[ext_resource type="PackedScene" uid="uid://bdhs2mrrbj5nh" path="res://Models/castle_REAL.tscn" id="7_yb2j5"]
-[ext_resource type="PackedScene" uid="uid://dxby10rew758j" path="res://Models/chest_REAL.tscn" id="8_frfar"]
+[ext_resource type="PackedScene" path="res://Models/castle_REAL.tscn" id="7_yb2j5"]
+[ext_resource type="PackedScene" path="res://Models/chest_REAL.tscn" id="8_frfar"]
 [ext_resource type="PackedScene" uid="uid://cu6n7q2mcga41" path="res://Scenes/Doodads/plant.tscn" id="9_sgmh7"]
 [ext_resource type="PackedScene" uid="uid://dxb08fldpmtet" path="res://FelixMapp_KOLLA_INTE/BubbleEmitter.tscn" id="10_3y3se"]
-[ext_resource type="PackedScene" uid="uid://b5hm5ipyuhpva" path="res://Models/rocktower_REAL.tscn" id="11_niev3"]
-[ext_resource type="PackedScene" uid="uid://bx3u5nno171w1" path="res://Scenes/multiplayer_template.tscn" id="12_6fobl"]
 
 [node name="Level" type="Node3D"]
-
-[node name="Fish" parent="." instance=ExtResource("1_jg4l2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5992, 19.5935, 166.785)
+script = ExtResource("1_f5l2o")
 
 [node name="fioshtank" parent="." instance=ExtResource("2_2woat")]
 transform = Transform3D(48.401, 0, 0, 0, 11.81, 0, 0, 0, 38.721, 0, 7.81861, 0)
@@ -110,34 +106,28 @@ transform = Transform3D(1.2271, 0.263178, 0, -0.263178, 1.2271, 0, 0, 0, 1.255, 
 [node name="BubbleEmitter" parent="." instance=ExtResource("10_3y3se")]
 transform = Transform3D(6.37, 0, 0, 0, 6.37, 0, 0, 0, 6.37, 188.126, 36.6059, 41.1115)
 
-[node name="rocktower" parent="." instance=ExtResource("11_niev3")]
-transform = Transform3D(2.48728, 0, -10.2938, 0, 10.59, 0, 10.2938, 0, 2.48728, 248.457, 20.3259, 78.6126)
-
 [node name="SpawnPositions" type="Node" parent="."]
 
 [node name="0" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9033, 24.0962, 10.2592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9033, 19.8708, 10.2592)
 
 [node name="Marker3D" type="Marker3D" parent="SpawnPositions/0"]
 gizmo_extents = 1.66
 
 [node name="1" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.2745, 24.0962, 10.2592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.2745, 19.8708, 10.2592)
 
 [node name="Marker3D" type="Marker3D" parent="SpawnPositions/1"]
 gizmo_extents = 1.66
 
 [node name="2" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5976, 24.0962, 10.2592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5976, 19.8708, 10.2592)
 
 [node name="Marker3D" type="Marker3D" parent="SpawnPositions/2"]
 gizmo_extents = 1.66
 
 [node name="3" type="Node3D" parent="SpawnPositions" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.6491, 24.0962, 10.2592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.6491, 19.8708, 10.2592)
 
 [node name="Marker3D" type="Marker3D" parent="SpawnPositions/3"]
 gizmo_extents = 1.66
-
-[node name="MultiplayerTemplate" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("12_6fobl")]
-spawn_position = NodePath("../SpawnPositions")
