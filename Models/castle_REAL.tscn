@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdhs2mrrbj5nh"]
+
+[ext_resource type="PackedScene" uid="uid://dafjlps7fabh0" path="res://Models/castle.glb" id="1_irwof"]
+[ext_resource type="Shader" path="res://FelixMapp_KOLLA_INTE/base_shader.gdshader" id="2_len1i"]
+[ext_resource type="Texture2D" uid="uid://c3eux756mfl4w" path="res://Models/castle_stone.jpg" id="3_xnh1a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xc80e"]
+render_priority = 0
+shader = ExtResource("2_len1i")
+shader_parameter/albedo = ExtResource("3_xnh1a")
+
+[node name="castle" instance=ExtResource("1_irwof")]
+transform = Transform3D(8.705, 0, 0, 0, 8.705, 0, 0, 0, 8.705, 0, 0, 0)
+
+[node name="Cube_001" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_xc80e")

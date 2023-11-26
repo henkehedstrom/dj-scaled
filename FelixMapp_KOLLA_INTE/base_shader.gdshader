@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded, shadows_disabled;
+render_mode unshaded, shadows_disabled, depth_draw_always;
 
 uniform sampler2D albedo;
 
