@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=17 format=3 uid="uid://b00jxdscyoi17"]
 
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
 [ext_resource type="PackedScene" uid="uid://dqug5t7l2hkkc" path="res://Scenes/goal_manager.tscn" id="5_dmtqs"]
@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://b5hm5ipyuhpva" path="res://Models/rocktower_REAL.tscn" id="11_niev3"]
 [ext_resource type="PackedScene" uid="uid://bx3u5nno171w1" path="res://Scenes/multiplayer_template.tscn" id="12_6fobl"]
 [ext_resource type="PackedScene" uid="uid://cjehvbmtgyhv6" path="res://Models/table.glb" id="12_abpjc"]
-[ext_resource type="PackedScene" uid="uid://crktuihi3bysu" path="res://Models/ship_REAL.tscn" id="13_day6h"]
+[ext_resource type="PackedScene" uid="uid://crktuihi3bysu" path="res://Models/submarine.glb" id="13_day6h"]
 [ext_resource type="PackedScene" uid="uid://cjylhaki4plr5" path="res://Models/room.glb" id="13_injma"]
+[ext_resource type="PackedScene" uid="uid://bk8vawvv6gpfo" path="res://Scripts/race_timer.tscn" id="14_ncumm"]
+[ext_resource type="PackedScene" uid="uid://dqavwc1abm7yp" path="res://Scenes/scoreboard.tscn" id="15_wfe88"]
 
 [sub_resource type="Environment" id="Environment_rgnh6"]
 fog_enabled = true
@@ -245,3 +247,9 @@ goal_manager = NodePath("../GoalManager")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rgnh6")
+
+[node name="RaceTimer" parent="." node_paths=PackedStringArray("goal_manager", "scoreboard") instance=ExtResource("14_ncumm")]
+goal_manager = NodePath("../GoalManager")
+scoreboard = NodePath("../Scoreboard")
+
+[node name="Scoreboard" parent="." instance=ExtResource("15_wfe88")]
