@@ -1,6 +1,7 @@
 extends Node3D
 
 var fish 
+var capture_mode:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,7 +36,11 @@ func _process(delta):
 	if Input.is_action_pressed("pitch_down"):
 		fish.rotation_angle.y = -fish.yaw_speed
 		
-	if Input.is_action_pressed("mouse_capture"):
+	if Input.is_action_just_pressed("mouse_capture"):
+		capture_mode = !capture_mode
+		if capture_mode:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
 	
 	fish.current_speed = clamp(fish.current_speed, fish.min_speed, fish.max_speed)

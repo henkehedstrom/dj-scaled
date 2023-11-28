@@ -16,6 +16,7 @@ func _process(delta):
 func show_time(time:int):
 	panel.visible = true
 	time_text.text = "Time: " + str(time)
+	
 
 func _on_quit_pressed():
 	get_tree().quit()
