@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=13 format=3 uid="uid://b00jxdscyoi17"]
 
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
 [ext_resource type="PackedScene" uid="uid://dqug5t7l2hkkc" path="res://Scenes/goal_manager.tscn" id="5_dmtqs"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b5hm5ipyuhpva" path="res://Models/rocktower_REAL.tscn" id="11_niev3"]
 [ext_resource type="PackedScene" uid="uid://bk8vawvv6gpfo" path="res://Scripts/race_timer.tscn" id="11_wsfkk"]
 [ext_resource type="PackedScene" uid="uid://bx3u5nno171w1" path="res://Scenes/multiplayer_template.tscn" id="12_6fobl"]
+[ext_resource type="PackedScene" uid="uid://dqavwc1abm7yp" path="res://Scenes/scoreboard.tscn" id="12_uhy6w"]
 [ext_resource type="PackedScene" uid="uid://cq7ygeb6mjrok" path="res://Models/ship_REAL.tscn" id="13_day6h"]
 
 [node name="Level" type="Node3D"]
@@ -106,5 +107,8 @@ goal_manager = NodePath("../GoalManager")
 [node name="ship" parent="." instance=ExtResource("13_day6h")]
 transform = Transform3D(3.18306, 3.25306, -5.19276, 2.01213, 4.9722, 4.34828, 5.78779, -3.51765, 1.34413, 90.0079, -62.9596, -87.9149)
 
-[node name="RaceTimer" parent="." node_paths=PackedStringArray("goal_manager") instance=ExtResource("11_wsfkk")]
+[node name="RaceTimer" parent="." node_paths=PackedStringArray("goal_manager", "scoreboard") instance=ExtResource("11_wsfkk")]
 goal_manager = NodePath("../GoalManager")
+scoreboard = NodePath("../Scoreboard")
+
+[node name="Scoreboard" parent="." instance=ExtResource("12_uhy6w")]

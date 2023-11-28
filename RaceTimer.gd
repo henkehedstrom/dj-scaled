@@ -3,6 +3,7 @@ extends Node
 var current_time:float 
 var _is_started:bool
 @export var goal_manager :Node
+@export var scoreboard: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +26,8 @@ func _process(delta):
 func on_win(id:int):
 	pause()
 	print("Player with id cleared the track in " + str(current_time) + " seconds!")
+	if scoreboard:
+		scoreboard.show_time(current_time)
 	
 	
 
