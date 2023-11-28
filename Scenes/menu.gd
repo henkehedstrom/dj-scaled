@@ -100,26 +100,25 @@ func _on_player_connected(id : int):
 @rpc("any_peer", "reliable")
 func _register_player():
 	var new_player_id = multiplayer.get_remote_sender_id()
-	var name = "Client"
+	var registered_name = "Client"
 	if(new_player_id == 1):
-		name = "Host"
+		registered_name = "Host"
 	
-	
-	$LobbyControl/ConnectedPlayers.add_item(name + str(new_player_id))
+	$LobbyControl/ConnectedPlayers.add_item(registered_name + str(new_player_id))
 	print("client connected" + " I am host: " + str(i_am_host))
 	
-	_add_to_players.rpc(name,new_player_id)
+	_add_to_players.rpc(registered_name, new_player_id)
 
 func _on_options_button_pressed():
 	_show_menu(options_menu)
 
 @rpc("any_peer")
-func _add_to_players(name,id):
-	print("attempting adding player with name: " + name + "and id" + str(id) + "I am host: " + str(i_am_host))
+func _add_to_players(local_name, id):
+	print("attempting adding player with name: " + local_name + "and id" + str(id) + "I am host: " + str(i_am_host))
 	if !GameManager.Players.has(id):
-		print("adding player with name: " + name + "and id" + str(id) + "I am host: " + str(i_am_host))
+		print("adding player with name: " + local_name + "and id" + str(id) + "I am host: " + str(i_am_host))
 		GameManager.Players[id]={
-			"name": name,
+			"name": local_name,
 			 "id": id}
 	
 	if multiplayer.is_server():
