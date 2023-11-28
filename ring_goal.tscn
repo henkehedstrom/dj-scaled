@@ -11,14 +11,6 @@ radius = 9.99161
 [node name="RingGoal" type="Node3D"]
 script = ExtResource("1_hwd8w")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.49373, 0.327024, 1.56383)
-visibility_range_end_margin = 330.99
-no_depth_test = true
-render_priority = 1
-text = "Placeholder"
-font_size = 1500
-
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

@@ -1,8 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d4fbhmi1ysnxk"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d4fbhmi1ysnxk"]
 
 [ext_resource type="Shader" path="res://FelixMapp_KOLLA_INTE/glass_material.gdshader" id="1_p3q4l"]
+[ext_resource type="Texture2D" uid="uid://ddss2auf4i47t" path="res://Textures/glass.jpg" id="2_3k148"]
 
 [resource]
 render_priority = -3
 shader = ExtResource("1_p3q4l")
 shader_parameter/color = Color(0.415686, 0.54902, 0.866667, 0.498039)
+shader_parameter/albedo = ExtResource("2_3k148")

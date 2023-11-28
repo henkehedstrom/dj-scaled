@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddss2auf4i47t"
-path.s3tc="res://.godot/imported/glass.jpg-fb434dec6d8cef8746981ab1593c1bd3.s3tc.ctex"
+uid="uid://b06fa2wkesfu0"
+path.s3tc="res://.godot/imported/submarine_uv-imporoived.png-c1aa386940a6b4b9f5846c7cbab4c78b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Textures/glass.jpg"
-dest_files=["res://.godot/imported/glass.jpg-fb434dec6d8cef8746981ab1593c1bd3.s3tc.ctex"]
+source_file="res://Models/submarine_uv-imporoived.png"
+dest_files=["res://.godot/imported/submarine_uv-imporoived.png-c1aa386940a6b4b9f5846c7cbab4c78b.s3tc.ctex"]
 
 [params]
 

@@ -17,4 +17,3 @@ transform = Transform3D(30, 0, 0, 0, 7.32, 0, 0, 0, 24, 0, 0, 0)
 
 [node name="RingGoal" parent="GoalManager" instance=ExtResource("4_5j5ir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9242, 23.7275, 76.2231)
-goal_number = "18"

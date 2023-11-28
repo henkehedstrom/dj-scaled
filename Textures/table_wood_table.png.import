@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddss2auf4i47t"
-path.s3tc="res://.godot/imported/glass.jpg-fb434dec6d8cef8746981ab1593c1bd3.s3tc.ctex"
+uid="uid://dsyplgyy8sppf"
+path.s3tc="res://.godot/imported/table_wood_table.png-0aa5596d8235bda7025f7876688d9326.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Textures/glass.jpg"
-dest_files=["res://.godot/imported/glass.jpg-fb434dec6d8cef8746981ab1593c1bd3.s3tc.ctex"]
+source_file="res://Textures/table_wood_table.png"
+dest_files=["res://.godot/imported/table_wood_table.png-0aa5596d8235bda7025f7876688d9326.s3tc.ctex"]
 
 [params]
 
