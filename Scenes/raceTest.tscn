@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b00jxdscyoi17"]
+[gd_scene load_steps=17 format=3 uid="uid://b00jxdscyoi17"]
 
 [ext_resource type="PackedScene" uid="uid://bnatb4jcs3ap3" path="res://FelixMapp_KOLLA_INTE/FishTankOverride.tscn" id="2_2woat"]
 [ext_resource type="PackedScene" uid="uid://dqug5t7l2hkkc" path="res://Scenes/goal_manager.tscn" id="5_dmtqs"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bk8vawvv6gpfo" path="res://Scripts/race_timer.tscn" id="14_ncumm"]
 [ext_resource type="PackedScene" uid="uid://dqavwc1abm7yp" path="res://Scenes/scoreboard.tscn" id="15_wfe88"]
 [ext_resource type="PackedScene" uid="uid://crktuihi3bysu" path="res://Models/ship_REAL.tscn" id="16_k4yov"]
-[ext_resource type="PackedScene" uid="uid://cid6u3cmr5qux" path="res://fish.tscn" id="18_d4go8"]
 
 [sub_resource type="Environment" id="Environment_rgnh6"]
 fog_enabled = true
@@ -254,5 +253,3 @@ scoreboard = NodePath("../Scoreboard")
 
 [node name="ship" parent="." instance=ExtResource("16_k4yov")]
 transform = Transform3D(3.18306, 3.25306, -5.19276, 2.01213, 4.9722, 4.34828, 5.78779, -3.51765, 1.34413, 88.9586, -63.0316, -88.5948)
-
-[node name="Fish" parent="." instance=ExtResource("18_d4go8")]
