@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bt0negnh1ts7m"]
+
+[ext_resource type="Shader" path="res://FelixMapp_KOLLA_INTE/base_shader.gdshader" id="1_nrslx"]
+[ext_resource type="Texture2D" uid="uid://cfagg7ichofdw" path="res://Models/gb_gobb_gb_gobb.png" id="2_mf3f3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nrslx")
+shader_parameter/albedo = ExtResource("2_mf3f3")
