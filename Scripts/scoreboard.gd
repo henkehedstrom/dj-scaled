@@ -1,6 +1,7 @@
 extends Node
 @onready var panel:Panel = $Panel
 @onready var time_text = $Panel/Time
+var scene = preload("res://Scenes/raceTest.tscn") 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +22,8 @@ func show_time(time:float):
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_restart_pressed():
+		get_tree().change_scene_to_packed(scene)
+
