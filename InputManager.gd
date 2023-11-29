@@ -2,6 +2,8 @@ extends Node3D
 
 var fish 
 var capture_mode:bool = true
+var inverse_x = false
+var inverse_y = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,16 +15,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("forward"):
-		fish.current_speed += fish.acceleration * delta
+		fish.current_speed += fish.acceleration * delta 
 		
 	if Input.is_action_pressed("back"):
 		fish.current_speed -= fish.acceleration * delta
 	
 	if Input.is_action_pressed("right"):
-		fish.yaw = -fish.yaw_speed
+		fish.yaw = -fish.yaw_speed 
 
 	if Input.is_action_pressed("left"):
-		fish.yaw = fish.yaw_speed
+		fish.yaw = fish.yaw_speed 
 
 	if Input.is_action_pressed("roll_right"):
 		fish.rotation_angle.x = fish.yaw_speed
@@ -34,7 +36,7 @@ func _process(delta):
 		fish.rotation_angle.y = fish.yaw_speed
 
 	if Input.is_action_pressed("pitch_down"):
-		fish.rotation_angle.y = -fish.yaw_speed
+		fish.rotation_angle.y = -fish.yaw_speed 
 		
 	if Input.is_action_just_pressed("mouse_capture"):
 		capture_mode = !capture_mode
@@ -50,3 +52,5 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		fish.rotation_angle = event.relative
+		
+

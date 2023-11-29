@@ -19,8 +19,13 @@ var input_manager = preload("res://Scripts/input_manager.tscn")
 var rotation_angle: Vector2 = Vector2.ZERO
 var goal_manager
 
+var inverse_x : bool 
+var inverse_y : bool 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	on_settings_changed()
+	GameManager.settings_changed.connect(on_settings_changed)
 
 	if goal_manager:
 		goal_manager.win.connect(on_win)
@@ -50,8 +55,10 @@ func on_win_internal(id:int):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id() && GameManager.is_multiplayer:
+		return
+		
 	current_speed = clamp(current_speed, min_speed, max_speed)
-	
 	apply_rotation(delta)
 	
 	pass
@@ -69,9 +76,9 @@ func apply_rotation(delta: float):
 		clamp(rotation_angle.y, -max_pitch_speed, max_pitch_speed),
 		clamp(yaw, -max_yaw_speed, max_yaw_speed),
 		clamp(rotation_angle.x, -max_roll_speed, max_roll_speed))
-	
-	rotate(right, local_rotation.x * delta) # Pitch
-	rotate(up, local_rotation.z * delta) # Yaw
+	var test = get_inverse(inverse_x)
+	rotate(right, local_rotation.x * delta * get_inverse(inverse_y)) # Pitch
+	rotate(up, local_rotation.z * delta * get_inverse(inverse_x)) # Yaw
 	rotate(forward, local_rotation.y * delta) # Roll
 
 	
@@ -85,8 +92,11 @@ func _physics_process(_delta):
 	var forward = -aim.z
 	move_and_collide(forward * current_speed)
 	
-#func _input(event):
-#	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
-#		return
-#	if event is InputEventMouseMotion:
-#		rotation_angle = event.relative
+
+func on_settings_changed():
+	inverse_x = GameManager.x_inverse
+	inverse_y = GameManager.y_inverse
+	print("Settings changed")
+
+func get_inverse(inverse):
+	return int(inverse) if int(inverse) > 0 else -1 

@@ -22,6 +22,7 @@ offset_bottom = 293.0
 texture = ExtResource("3_3jtjk")
 
 [node name="MainMenuControl" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 24.0
@@ -129,7 +130,6 @@ theme = ExtResource("4_c10h6")
 placeholder_text = "HOST IP"
 
 [node name="OptionsControl" type="Control" parent="." node_paths=PackedStringArray("back_menu")]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 24.0
@@ -156,15 +156,16 @@ offset_bottom = 67.0
 theme = ExtResource("4_c10h6")
 text = "Invert X-axis"
 
-[node name="InvertXAxisCheckbox2" type="CheckBox" parent="OptionsControl"]
+[node name="InvertYAxisCheckbox" type="CheckBox" parent="OptionsControl"]
 layout_mode = 0
 offset_left = 505.0
 offset_top = 78.0
 offset_right = 529.0
 offset_bottom = 102.0
 scale = Vector2(2, 2.066)
+button_pressed = true
 
-[node name="InvertXAxisLabel2" type="Label" parent="OptionsControl"]
+[node name="InvertYAxisLabel" type="Label" parent="OptionsControl"]
 layout_mode = 0
 offset_left = -6.0
 offset_top = 74.0
@@ -194,4 +195,6 @@ alignment = 0
 [connection signal="pressed" from="LobbyControl/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MultiplayerControl/HostGameButton" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="MultiplayerControl/JoinGameButton" to="." method="_on_join_game_button_pressed"]
+[connection signal="toggled" from="OptionsControl/InvertXAxisCheckbox" to="." method="_on_invert_x_axis_checkbox_toggled"]
+[connection signal="toggled" from="OptionsControl/InvertYAxisCheckbox" to="." method="_on_invert_y_axis_checkbox_toggled"]
 [connection signal="pressed" from="QuitOrBackGameButton" to="." method="_on_quit_game_button_pressed"]

@@ -1,6 +1,6 @@
 extends Node3D
 
-var solo_play_scene : PackedScene = preload("res://level.tscn")
+var solo_play_scene : PackedScene = preload("res://Scenes/raceTest.tscn")
 var multiplayer_scene : PackedScene = preload("res://Scenes/raceTest.tscn") 
 
 var player_info = {"name": "Name", "id": -1}
@@ -30,6 +30,7 @@ func _ready():
 
 
 func _on_solo_play_button_pressed():
+	_add_to_players("Solo",0)
 	_change_scene(solo_play_scene)
 
 
@@ -160,3 +161,17 @@ func add_self():
 	item_list.set_item_custom_fg_color(host_index, Color.GOLD)
 
 
+
+func _on_invert_y_axis_checkbox_toggled(button_pressed):
+	GameManager.y_inverse = button_pressed
+	GameManager.settings_changed.emit()
+	print("set y inverse to " + str(button_pressed))
+	pass # Replace with function body.
+
+
+func _on_invert_x_axis_checkbox_toggled(button_pressed):
+	GameManager.x_inverse = button_pressed
+	GameManager.settings_changed.emit()
+	print("set x inverse to "+ str(button_pressed))
+	
+	pass # Replace with function body.

@@ -13,9 +13,10 @@ func _ready():
 func _process(delta):
 	pass
 	
-func show_time(time:int):
+func show_time(time:float):
 	panel.visible = true
-	time_text.text = "Time: " + str(time)
+	time_text.text = "Time: " + str(time).pad_decimals(3)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
 	
 
 func _on_quit_pressed():
