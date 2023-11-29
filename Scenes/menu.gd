@@ -69,7 +69,6 @@ func _on_host_game_button_pressed():
 	
 	multiplayer.multiplayer_peer = peer
 	i_am_host = true
-	print("started server" + "I am host: " + str(i_am_host))
 	_show_menu(lobby_menu)
 	add_self()
 
@@ -95,17 +94,14 @@ func _on_join_game_button_pressed():
 
 func _on_player_connected(id : int):
 	print("Player connected " + str(id))
-	_register_player.rpc_id(id)
+	_register_player.rpc_id(id, $MultiplayerControl/NameLineEdit.text)
 
 
 @rpc("any_peer", "reliable")
-func _register_player():
+func _register_player(registered_name : String):
 	var new_player_id = multiplayer.get_remote_sender_id()
-	var registered_name = "Client"
-	if(new_player_id == 1):
-		registered_name = "Host"
 	
-	$LobbyControl/ConnectedPlayers.add_item(registered_name + str(new_player_id))
+	$LobbyControl/ConnectedPlayers.add_item(registered_name)
 	print("client connected" + " I am host: " + str(i_am_host))
 	
 	_add_to_players.rpc(registered_name, new_player_id)
@@ -140,8 +136,6 @@ func _make_all_menus_invisible():
 	multiplayer_menu.visible = false
 	options_menu.visible = false
 	lobby_menu.visible = false
-	
-
 
 func _on_start_game_button_pressed():
 	#TODO: add check that at least one player should have joined?
@@ -153,14 +147,11 @@ func _on_start_game_button_pressed():
 func _start_multiplayer_game():
 	GameManager.is_multiplayer = true
 	_change_scene(multiplayer_scene)
-	
 
 func add_self():
 	var item_list = $LobbyControl/ConnectedPlayers
-	var host_index = item_list.add_item("Self" + str(multiplayer.get_unique_id()))
+	var host_index = item_list.add_item($MultiplayerControl/NameLineEdit.text)
 	item_list.set_item_custom_fg_color(host_index, Color.GOLD)
-
-
 
 func _on_invert_y_axis_checkbox_toggled(button_pressed):
 	GameManager.y_inverse = button_pressed

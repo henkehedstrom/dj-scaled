@@ -90,7 +90,6 @@ offset_bottom = 321.0
 theme = ExtResource("4_c10h6")
 
 [node name="MultiplayerControl" type="Control" parent="." node_paths=PackedStringArray("back_menu")]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 24.0
@@ -100,11 +99,19 @@ offset_bottom = 318.0
 script = ExtResource("4_vjooh")
 back_menu = NodePath("../MainMenuControl")
 
+[node name="NameLineEdit" type="LineEdit" parent="MultiplayerControl"]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 659.0
+offset_bottom = 68.0
+theme = ExtResource("4_c10h6")
+placeholder_text = "NAME"
+
 [node name="HostGameButton" type="Button" parent="MultiplayerControl"]
 layout_mode = 0
-offset_top = 1.0
+offset_top = 106.0
 offset_right = 405.0
-offset_bottom = 69.0
+offset_bottom = 174.0
 theme = ExtResource("4_c10h6")
 text = "HOST"
 flat = true
@@ -112,9 +119,9 @@ alignment = 0
 
 [node name="JoinGameButton" type="Button" parent="MultiplayerControl"]
 layout_mode = 0
-offset_top = 67.0
+offset_top = 197.0
 offset_right = 405.0
-offset_bottom = 135.0
+offset_bottom = 265.0
 theme = ExtResource("4_c10h6")
 text = "JOIN"
 flat = true
@@ -123,13 +130,14 @@ alignment = 0
 [node name="IpAddressLineEdit" type="LineEdit" parent="MultiplayerControl"]
 layout_mode = 0
 offset_left = -3.0
-offset_top = 125.0
+offset_top = 255.0
 offset_right = 659.0
-offset_bottom = 193.0
+offset_bottom = 323.0
 theme = ExtResource("4_c10h6")
 placeholder_text = "HOST IP"
 
 [node name="OptionsControl" type="Control" parent="." node_paths=PackedStringArray("back_menu")]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 24.0
