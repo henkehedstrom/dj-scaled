@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b0fx7x0rtxq20" path="res://Models/archway.glb" id="1_bdlhf"]
 [ext_resource type="Script" path="res://Scripts/goal.gd" id="1_fq3f4"]
-[ext_resource type="AudioStream" uid="uid://dwuw7uxubuokt" path="res://SFX/Pling.mp3" id="3_kd3js"]
+[ext_resource type="AudioStream" uid="uid://d2qwiygxw88wn" path="res://SFX/Pling.wav" id="3_v3hy6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qjit5"]
 size = Vector3(24.406, 33.9659, 1)
@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25968, 0)
 shape = SubResource("BoxShape3D_qjit5")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_kd3js")
+stream = ExtResource("3_v3hy6")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
