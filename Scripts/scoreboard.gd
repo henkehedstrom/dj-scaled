@@ -23,7 +23,10 @@ func show_time(time:float):
 func _on_quit_pressed():
 	get_tree().quit()
 
+@rpc("any_peer", "call_local")
+func reload_scene():
+	get_tree().change_scene_to_packed(scene)
 
 func _on_restart_pressed():
-		get_tree().change_scene_to_packed(scene)
+		reload_scene.rpc()
 
