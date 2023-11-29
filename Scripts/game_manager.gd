@@ -3,7 +3,7 @@ extends Node
 var Players = {}
 var is_multiplayer = false
 
-var x_inverse:bool = false
+var x_inverse:bool = true
 var y_inverse:bool = true
 
 signal settings_changed
