@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://curutlqyuqybp"]
-
-[ext_resource type="PackedScene" uid="uid://5db2ymui2if4" path="res://Models/fish.glb" id="1_lqy63"]
-[ext_resource type="Material" uid="uid://b1pb68vupqq8q" path="res://Materials/fish_material.tres" id="2_0olx4"]
-
-[node name="fish" instance=ExtResource("1_lqy63")]
-
-[node name="Fish" parent="." index="3"]
-material_override = ExtResource("2_0olx4")

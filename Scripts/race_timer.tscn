@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk8vawvv6gpfo"]
-
-[ext_resource type="Script" path="res://RaceTimer.gd" id="1_cdu1t"]
-
-[node name="RaceTimer" type="Node"]
-script = ExtResource("1_cdu1t")

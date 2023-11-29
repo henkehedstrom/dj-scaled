@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqug5t7l2hkkc"]
-
-[ext_resource type="Script" path="res://Scripts/goal_manager.gd" id="1_bef76"]
-
-[node name="GoalManager" type="Node"]
-script = ExtResource("1_bef76")

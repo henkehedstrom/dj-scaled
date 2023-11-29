@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd5jheh3gnts6"]
-
-[ext_resource type="PackedScene" uid="uid://dv7d76vym60wb" path="res://Models/gb_gobb.glb" id="1_fklrq"]
-
-[node name="gb_gobb" instance=ExtResource("1_fklrq")]

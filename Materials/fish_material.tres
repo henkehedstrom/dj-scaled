@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b1pb68vupqq8q"]
-
-[ext_resource type="Texture2D" uid="uid://by8isd383o2au" path="res://Textures/fish_texture.png" id="1_mcsyf"]
-
-[resource]
-shading_mode = 0
-albedo_color = Color(0.584314, 0.584314, 0.584314, 1)
-albedo_texture = ExtResource("1_mcsyf")
-texture_filter = 2
